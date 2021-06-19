@@ -1,0 +1,55 @@
+.btn {
+  display: inline-block;
+  border: none;
+  background-color: #ccc;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 2em;
+  cursor: pointer;
+}
+
+.btn-success {
+  background-color: #E98C3B;
+}
+.btn-success:hover {
+  background-color: #df7c25;
+}
+
+.btn-link {
+  color: #333;
+  background-color: transparent;
+}
+.btn-link:hover {
+  color: #444;
+  background-color: transparent;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+
+/**
+ * Custom components
+ */
+.btn-login {
+  text-align: left;
+  display: block;
+  width: 100%;
+
+  background-image: url('../img/right-arrow.svg');
+  background-repeat: no-repeat;
+  background-position: 98% 50% ;
+  background-size: 32px;
+}
+
+
+.btn-logout {
+  padding-left: 32px;
+  background-image: url('../img/logout.svg');
+  background-repeat: no-repeat;
+  background-position: 5px 50% ;
+  background-size: 16px;
+}

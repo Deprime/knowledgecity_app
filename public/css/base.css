@@ -1,0 +1,65 @@
+body {
+  font-size: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #eef2f4;
+}
+h2 {font-size: 20px}
+
+
+/**
+ * Wrappers
+ */
+.wrapper {
+  padding: 30px 0;
+}
+.auth-wrapper {
+  padding-top: 15vh;
+}
+.list-wrapper {
+  padding: 15px 0;
+}
+
+.main {
+  margin: 0 auto;
+}
+.wrapper .main {
+  max-width: 500px;
+}
+.list-wrapper .main {
+  max-width: 740px;
+}
+
+
+/**
+ * Page componetns
+ */
+.page-header {
+  padding: 0 0 15px 0;
+}
+.page-header .logo {
+  margin: 15px 0;
+  display: block;
+  width: auto;
+  max-width: 100%;
+}
+
+.page-footer {
+  text-align: center;
+  padding: 12px 0;
+}
+
+.page-content {
+  padding: 5px;
+}
+
+.page-text-block {
+  padding: 0 0 30px 0;
+}
+
+.icons-copyrights {
+  text-align: center;
+  color: #eee;
+}
+.icons-copyrights * {
+  color: #ddd;
+}

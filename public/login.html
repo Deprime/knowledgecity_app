@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authorization :: Knowledge City LMS</title>
+    <link rel="stylesheet" href="./css/app.css">
+
+    <script src="/js/app/auth.js"></script>
+    <script>
+      let auth = new Auth();
+      auth.middlewareGuest();
+    </script>
+  </head>
+  <body>
+
+    <div class="wrapper auth-wrapper">
+      <section class="main">
+        <header class="page-header page-header-logo">
+          <img src="./img/logo.svg" alt="" class="logo">
+        </header>
+        <div class="page-content">
+          <div class="page-text-block">
+            <h2>Welcome to the Learning Managment System</h2>
+            <p>Please log in to continue</p>
+          </div>
+
+          <form id="auth-form" class="form auth-form">
+            <div class="form-error-message"></div>
+            <div class="form-group">
+              <input type="text" id="username" class="form-control username-control" autofocus tabindex="1" placeholder="Username">
+            </div>
+            <div class="form-group">
+              <input type="password" id="password" class="form-control password-control" tabindex="2" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <input type="checkbox" id="remember_me" name="remember_me" value="1" class="checkbox">
+              <label for="remember_me" class="checkbox-label">Remember me</label>
+            </div>
+            <div class="form-group form-group-action">
+              <button class="btn btn-success btn-login" id="login">Log me in</button>
+            </div>
+          </form>
+        </div>
+        <footer class="page-footer"></footer>
+      </section>
+    </div>
+  </body>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="/js/vendors/zepto.min.js"></script>
+  <script src="/js/login.js"></script>
+
+</html>

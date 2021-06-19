@@ -1,0 +1,64 @@
+input,
+textarea {
+  outline: none;
+}
+
+.form {
+  display: block;
+}
+
+.form-error-message {
+  display: none;;
+  background-color: #ffcc80;
+  color: #444;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  padding: 0 0 12px 0;
+}
+.form-group-action {
+  padding-top: 18px;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 8px 18px;
+  border-radius: 2em;
+  border: 1px solid #aaa;
+  background-color: rgb(245, 245, 245);
+  background-repeat: no-repeat;
+}
+
+.form-control:focus {
+  border: 1px solid rgb(105, 105, 105);
+  background-color: #fff;
+}
+
+.checkbox-label {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+/**
+ * Custom components
+ */
+.auth-form {}
+.username-control,
+.password-control {
+  padding-left: 40px;
+  background-position: 8px 50%;
+  background-size: 28px;
+}
+.username-control {
+  background-image: url('../img/user.svg') !important;
+}
+.password-control {
+  background-image: url('../img/password.svg') !important;
+}

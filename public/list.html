@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student list :: Knowledge City LMS</title>
+    <link rel="stylesheet" href="./css/app.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="/js/app/auth.js"></script>
+    <script>
+      let auth = new Auth();
+      auth.middlewareAuthorized();
+    </script>
+  </head>
+  <body>
+
+    <div class="wrapper list-wrapper">
+      <section class="main">
+        <header class="page-header text-center">
+          <h1>User List</h1>
+        </header>
+        <div class="page-content" id="page-content">
+          <table class="table">
+            <tbody id="table-body">
+            </tbody>
+
+            <script id="row-template" type="text/x-handlebars-template">
+              {{#each student}}
+              <tr>
+                <td width="120px" class="text-center">
+                  <span class="check-icon"></span>
+                </td>
+                <td>
+                  <div>{{email}}</div>
+                  <div class="student-name">{{first_name}} {{last_name}}</div>
+                </td>
+                <td width="160px">
+                  <div>...</div>
+                  <div>{{title}}</div>
+                </td>
+              </tr>
+              {{/each}}
+            </script>
+
+          </table>
+        </div>
+
+        <div class="pagination" id="pagination"></div>
+        <script id="pagination-template" type="text/x-handlebars-template">
+          <ul>
+            {{#each page}}
+              {{#if number}}
+                <li class="page {{current}}" id="{{number}}">{{title}}</li>
+              {{else}}
+                <li class="fake-page">{{title}}</li>
+              {{/if}}
+            {{/each}}
+          </ul>
+        </script>
+
+        <footer class="page-footer">
+          <button id="logout" class="btn btn-link btn-logout">Log out</button>
+        </footer>
+
+        <div class="icons-copyrights">
+          <div>Some of the icons used on this site are taken from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        </div>
+      </section>
+    </div>
+  </body>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="/js/vendors/zepto.min.js"></script>
+  <script src="/js/list.js"></script>
+</html>
