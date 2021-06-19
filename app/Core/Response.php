@@ -53,4 +53,15 @@ class Response {
     http_response_code($code);
     echo json_encode($code.': Unauthorized');
   }
+
+  /**
+   * Service Unavailable
+   *
+   * @param integer $code
+   * @return void
+   */
+  public static function serviceUnavailable($msg = 'Service Unavailable', $code = 503) {
+    http_response_code($code);
+    echo json_encode($code.': '.$msg);
+  }
 }

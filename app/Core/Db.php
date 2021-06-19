@@ -9,6 +9,7 @@ class Db {
 
   private $sth = null;
   private $dbh = null;
+  protected $exception = null;
 
   protected $table  = null;
   protected $attributes = [];
@@ -41,7 +42,10 @@ class Db {
 
   public function getDateFormat() {
     return $this->datetime_format;
+  }
 
+  public function getException() {
+    return $this->exception;
   }
 
 
@@ -56,8 +60,8 @@ class Db {
     try {
       $this->dbh = new \PDO('mysql:host='.$connection['host'].';dbname='.$connection['database'], $connection['username'], $connection['password']);
     } catch (\PDOException $e) {
-      print "Error!: " . $e->getMessage() . "<br/>";
-      die();
+      $this->exception = "Error!: " . $e->getMessage();
+      return false;
     }
 
     $this->dbh->query("SET NAMES 'utf8'");

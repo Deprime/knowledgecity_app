@@ -31,17 +31,21 @@ document.addEventListener("DOMContentLoaded", function(e) {
       auth.redirect('list');
     })
     .catch(err => {
-      console.debug(err);
       if (err?.response?.data) {
+        // console.log(err.response.data);
         const msg = err.response.data;
+        let error_string = '';
         if (msg?.errors && Array.isArray([msg.errors])) {
-          let error_string = '';
           msg.errors.forEach((error) => {
             error_string += `<p>${error}</p>`;
           });
           $('.form-error-message').html(error_string);
-          $('.form-error-message').show();
         }
+        else {
+          error_string = msg;
+        }
+        $('.form-error-message').html(error_string);
+        $('.form-error-message').show();
       }
     })
     .finally(() => {

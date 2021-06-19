@@ -219,7 +219,8 @@ class Application {
 
     # Set conection config for DB instance
     $db = Db::getInstance();
-    $db->connection($this->config('database'));
+    if (!$db->connection($this->config('database')))
+      return Response::serviceUnavailable('Connection to the database is not established. Reasone: '.$db->getException());
 
     # Ignite application routing
     $this->routing();
