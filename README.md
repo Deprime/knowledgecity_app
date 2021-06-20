@@ -10,10 +10,11 @@ I tried to make the app as flexible as possible. But there are still many places
 
 1. Clone the app
 2. Make ```composer install```. Note that there are no dependencies in the application. I just use composer autoload.
-3. Import the database dump.
-4. All the application settings files are located in the **/config** directory.
-5. All the application routes are located in the **/routes** directory.
-6. To log in to the app, you can use one of the following accounts
+3. The Apache rootdir must be **/public**
+4. Import the database dump.
+5. All the application settings files are located in the **/config** directory.
+6. All the application routes are located in the **/routes** directory.
+7. To log in to the app, you can use one of the following accounts
    1. username: **root**, password: **sudopassword**;
    2. username: **splinter**, password: **kavabanga**;
    3. username: **batman**, password: **iambatman**;
