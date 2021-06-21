@@ -22,5 +22,7 @@ I tried to make the app as flexible as possible. But there are still many places
 ## Information
 
 The application uses a single entry point.
-The session duration without the memory option is 15 minutes.
+
+The session duration without "Remember me" attribute is 15 minutes.
+
 At the frontend user [Zepto.js](https://zeptojs.com), [Handlebars.js](https://handlebarsjs.com) & [Axios.js](https://axios-http.com).
