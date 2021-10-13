@@ -9,6 +9,6 @@ return [
   'host'     => '127.0.0.1',
   'post'     => '3306',
   'database' => 'kcity_db',
-  'username' => 'kcity_user',
-  'password' => 'MOSl*8%73ORpvYE2',
+  'username' => 'root',
+  'password' => 'root',
 ];

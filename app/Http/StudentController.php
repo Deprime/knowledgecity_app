@@ -33,4 +33,29 @@ class StudentController extends Controller {
       'page_list'    => $page_list,
     ]);
   }
+
+
+  /**
+   * Store new student
+   */
+  public function store() {
+    $input = $this->app->getRequestData();
+    if (!!$input['student']) {
+      $student = $input['student'];
+
+      if (count($student) === 5) {
+        $student['section_id'] = (int) $student['section_id'];
+
+        $query  = "INSERT INTO `students` (`id`, `section_id`, `first_name`, `last_name`, `login`, `email`, `created_at`, `updated_at`) ";
+        $query .= " VALUES (NULL, '".$student['section_id']."', '".$student['first_name']."', '".$student['last_name']."', '".$student['login']."', '".$student['email']."', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);";
+
+        $db = Db::getInstance();
+        $db->raw($query);
+
+        return Response::json(['student' => $student]);
+      }
+    }
+
+    return Response::json(['message' => 'Invalid data', 'errors' => ['Invalid data.']], 403);
+  }
 }

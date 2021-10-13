@@ -37,10 +37,10 @@ h2 {font-size: 20px}
   padding: 0 0 15px 0;
 }
 .page-header .logo {
-  margin: 15px 0;
+  margin: 15px auto;
   display: block;
   width: auto;
-  max-width: 100%;
+  max-width: 100px;
 }
 
 .page-footer {
@@ -62,4 +62,12 @@ h2 {font-size: 20px}
 }
 .icons-copyrights * {
   color: #ddd;
+}
+
+
+.warning {
+  background-color: rgb(240, 124, 124);
+  color: #fff;
+  padding: 8px;
+  display: none;
 }

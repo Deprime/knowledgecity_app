@@ -8,6 +8,6 @@ return [
   'version'  => '0.0.1',
   'env'      => 'development',
   'debug'    => false,
-  'url'      => 'http://kcity.local',
+  'url'      => 'http://kc-testapp.local',
   'timezone' => 'Europe/Moscow'
 ];

@@ -57,6 +57,100 @@ function fetch(page = 1) {
   });
 }
 
+/**
+ * Toggle create form
+ * @returns
+ */
+$('#toggle-form').on('click', function(e) {
+  $('#create-form').toggle();
+});
+
+
+/**
+ * Store new student
+ */
+$('#store').on('click', function(e) {
+  const input_list =  $('#create-form .input-control');
+  const select_list =  $('#create-form .select-control');
+  let new_student  = {};
+
+  input_list.forEach((input) => {
+    const value = $(input).val().replace(/ /g, "");
+    if (value.length > 1) {
+      const name = $(input).attr("name");
+      new_student[name] = value;
+    }
+  });
+
+  select_list.forEach((select) => {
+    const value = $(select).val().replace(/ /g, "");
+    if (value > 0) {
+      const name = $(select).attr("name");
+      new_student[name] = value;
+    }
+  });
+
+  store(new_student);
+});
+
+
+function toggleWarning(visible) {
+  if (visible) {
+    $("#warning").show();
+  }
+  else {
+    $("#warning").hide();
+  }
+}
+
+
+/**
+ * Store request
+ * @param {*} student
+ */
+function store(student) {
+  axios({method: 'post', url: `/users`, data: {student: student}})
+  .then(response => {
+    const data = response.data;
+    toggleWarning(false);
+    clearCreateForm();
+    fetch();
+  })
+  .catch(err => {
+    toggleWarning(true);
+    console.log(err);
+  });
+}
+
+/**
+ * Clear create form
+ * @returns {void}
+ */
+function clearCreateForm() {
+  $('#create-form .input-control').val('');
+  $('#create-form .select-control').val(0);
+}
+
+/**
+ * Get section list
+ */
+function getSectionList() {
+  axios({method: 'get', url: `/sections`})
+  .then(response => {
+    const data = response.data;
+    const section_list = data.section_list;
+    section_list.forEach((section) => {
+      $('#section-selection').append( `<option value="${section.id}">${section.title}</option>` );
+    })
+  })
+  .catch(err => {
+    console.log(err);
+  });
+}
+
+
+
+
 
 /**
  * Method description
@@ -78,4 +172,5 @@ $(document).on('click', '.page', function(e) {
 document.addEventListener("DOMContentLoaded", function(e) {
   // let auth = new Auth();
   fetch();
+  getSectionList();
 });

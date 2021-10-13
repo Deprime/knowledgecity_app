@@ -21,6 +21,33 @@
         <header class="page-header text-center">
           <h1>User List</h1>
         </header>
+
+        <div class="create-form-wrapper">
+          <button id="toggle-form" class="btn-primary">New student from</button>
+          <section id="create-form" class="create-form">
+            <div class="pb-2">
+              <input type="text" name="first_name" placeholder="First name" class="form-control-sm input-control">
+              <input type="text" name="last_name" placeholder="Last name" class="form-control-sm input-control">
+            </div>
+            <div class="pb-2">
+              <input type="email" name="email" placeholder="Email" class="form-control-sm input-control">
+              <input type="text" name="login" placeholder="Login" class="form-control-sm input-control">
+            </div>
+            <div class="pb-2">
+              <select name="section_id" id="section-selection" class="form-control-sm select-control">
+                <option disabled selected value="0">Select a section ...</option>
+              </select>
+            </div>
+            <div class="pb-2">
+              <button id="store" class="btn-primary">Create student</button>
+            </div>
+
+            <div class="warning" id="warning">
+              Not all fields of the form are filled in correctly
+            </div>
+          </section>
+        </div>
+
         <div class="page-content" id="page-content">
           <table class="table">
             <tbody id="table-body">

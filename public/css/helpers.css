@@ -7,3 +7,7 @@
 .text-left {
   text-align: left;
 }
+
+.pb-2 {
+  padding-bottom: 8px;
+}
